@@ -172,7 +172,7 @@
                 - Protocal size : 프로토콜 주소 길이
                     - 04
                 - Opcode : 오퍼레이션 코드
-                    - 응답 ⇒ 00 01
+                    -  ⇒ 00 01
                 - Sender MAC address(출발지 MAC 주소)
                     - 88:3c:1c:7a:89:30
                 - Sender IP address(출발지 IP 주소)
