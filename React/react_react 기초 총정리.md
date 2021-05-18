@@ -9,13 +9,27 @@
 
 
 
+<목차>
+
+- React란?
+- JSX
+- props, state
+- React Component lifeCycle
+- 이벤트 처리하기
+
+
+
+---
+
+
+
 ### React란?
 
 - **React.js** : **UI를 위한 javascript의 라이브러리.** (페이스북에서 만들었다.)
 
 - **SPA(Single Page Application)**
 
-- 라우팅, api 통신 등의 기능이 리액트에서 제공되지 않으므로 3 party 라이브러리를 사용해야한다. → axios, mobX, redux 등
+- 라우팅, api 통신 등의 기능이 리액트에서 제공되지 않으므로 3rd party 라이브러리를 사용해야한다. → axios, mobX, redux 등
 
 - **Babel** 을 통해 브라우저에서 실행되기 전에, 대부분의 브라우저가 사용할 수 있는 JS코드로 변환하여 사용된다.
 
@@ -23,7 +37,7 @@
 
 - **컴포넌트**를 통해 UI를 재사용 가능한 여러 조각으로 나누며 독립적인 단위로 쪼개어 생각할 수 있다.
 
-  - 컴포넌트 : React element를 반환.
+  - **컴포넌트 : React element를 반환.**
 
   - 컴포넌트의 이름은 항상 대문자로 시작한다.
 
@@ -49,12 +63,14 @@
 
 - **JSX(JavaScript Extension)** : html을 이용할 때 JSX를 사용한다. 
 
+  - JSX나 ES6 등의 경우 모든 브라우저에서 지원하지 않기 때문에 브라우저가 해석이 가능한 코드로 변환해야 한다. ex) `Babel`
+  
   ```jsx
   //JSX
   const element = <h1 className="greeting">hello react</h1>;
   
   //Babel은 JSX를 React.createElement()호출로 컴파일한다.
-  React.creatElement('h1', {className: 'greeting'}, 'hello react');
+React.creatElement('h1', {className: 'greeting'}, 'hello react');
   ```
 
   - 위 문법은 문자열도 아니고, html도 아니다. **JSX라고 하여 javascript를 확장한 문법이다. JSX는 react element를 생성**한다.  react를 사용할 때 JSX가 필수는 아니지만, 편리하기 때문에 주로 같이 사용하는 듯 하다. (일일이 `React.createElement()`하는건 귀찮으니까..)
@@ -62,7 +78,7 @@
   - `{}` 중괄호 안에 자바스크립트 표현식을 넣을 수 있다.
 
   - JSX는 표현식이다. 컴파일이 끝나면 JSX 표현식이 정규 javascript함수를 호출하고, javascript객체로 인식된다.
-
+  
     ```jsx
     const name = 'ksh';
     const element = <h1>hello, {name}</h1>;
@@ -70,20 +86,20 @@
     ReactDOM.render(
     	element,
         document.getElementById('root')
-    );
+  );
     ```
 
   - `()`로 묶어서 여러줄로 정의할 수도 있다.
-
+  
     ```jsx
     const element = (
     	<div>
         	<h1>{name}</h1>
             <p>hello react</p>
         </div>
-    );
+  );
     ```
-
+  
     
 
 ### props, state
@@ -158,11 +174,13 @@
   
   ```
 
-  ![image-20210509221525666](C:\Users\김세희\AppData\Roaming\Typora\typora-user-images\image-20210509221525666.png)
+  `props`와 `state` 두 객체 모두 렌더링 결과물에 영향을 주는 정보를 갖고 있는데 `props`는 마치 함수 매개변수와 같이 컴포넌트에 전달되고, `state`는 함수 내에 선언된 변수처럼 컴포넌트 안에서 관리된다.
+
+  
 
 - **`props`** 
 
-  - 부모 컴포넌트가 자식 컴포넌트에게 값을 전달할 때 사용하는 것.
+  - **부모 컴포넌트가 자식 컴포넌트에게 값을 전달**할 때 사용하는 것.
 
   - **`read-only`** : <u>컴포넌트 자체(내부)에서 수정 불가능.</u> 
 
@@ -282,6 +300,82 @@ ReactDOM.render(
     document.getElementById('root')
 );
 ```
+
+
+
+### 이벤트 처리하기
+
+- React에서 이벤트는 `camelCase`를 사용한다. → `onClick`
+- JSX를 사용하여 문자열이 아닌 함수로 이벤트 핸들러 전달.
+  - `onclick={handleClick}`
+
+
+
+```javascript
+function ActionLink(){
+  //e : 합성 이벤트(SyntheticEvent) : 모든 브라우저에서 동작
+  function handleClick(e){
+    e.preventDefault();
+    console.log('the link was clicked');
+  }
+  
+  return(
+    <a href="#" onClick={handleClick}>
+    Click me
+    </a>
+  );
+}
+
+ReactDOM.render(
+	<ActionLink />,
+    document.getElementById('root')
+);
+```
+
+
+
+아래는 토글버튼 예제이다. 클릭할 때마다 `state`를 변화시킨다.
+
+```javascript
+class Toggle extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {isToggleOn : true};
+    
+    //callback func에서 this가 작용하려면 아래와 같이 바인딩 필요
+    this.handleClick = this.handleClick.bind(this);
+  }
+  
+  handleClick(){
+    this.setState(state => ({
+      isToggleOn : !state.isToggleOn
+    }));
+  }
+  
+  render(){
+    return(
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ?  'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+또는 `arrow function`을 이용하여 `this`바인딩을 할 수도 있다.
+
+```react
+<button onClick={() => this.handleClick()}>Click me</button>
+```
+
+
+
+
 
 
 
