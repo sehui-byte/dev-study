@@ -1,6 +1,10 @@
 노션 링크 <br>
 https://www.notion.so/1-8ad3188ff3614dd4961955ac1739690c
 
+[한시간만에 끝내는 Vue.js 입문 정리](https://www.youtube.com/watch?v=sqH0u8wN4Rs)
+
+→ 거의 라우팅 위주의 강의<br>
+
 ### vue는 웹프론트엔드 프레임워크
 
 - 컴포넌트 기반의 spa(Single Page Application)을 구축할 수 있게 해주는 프레임워크
@@ -201,3 +205,115 @@ export default {
 </template>
 ```
 ![Untitled](https://user-images.githubusercontent.com/78526031/117561084-8d947380-b0ce-11eb-9496-7e998dbba78b.png)
+(componet -> component 오타)
+
+App.vue 
+
+</Header> 밑에 추가
+
+```html
+<div id="content" class="content">
+  <router-view></router-view>
+</div>
+```
+
+views 폴더 밑에 Home.vue파일이랑 About.vue파일 만들기
+
+```html
+<template>
+    <div>
+        <h1>Welcome to Home!</h1> 
+    </div>
+</template>
+<script>
+export default {};
+</script>
+```
+
+```html
+<template>
+    <div>
+				<h1>About Page</h1>
+    </div>
+</template>
+<script>
+export default {};
+</script>
+```
+
+페이지전환하려면 라우터 선언해야함
+
+아직까지는 라우터 설치만하고 선언은 안한 상태
+
+src폴더에 router.js파일 만듬
+
+```jsx
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "./views/Home";
+import About from "./views/About";
+
+// 라우터를 사용하겠다
+Vue.use(VueRouter);
+
+// 라우터 정의
+const router = new VueRouter({
+    mode: "history", 
+    routes: [ // path에 따른 component 연결
+        // 이걸 App.vue의 <router-view>에 로딩시키는 것
+        // App.vue의 전체페이지는 변동없고 <router-view>부분만
+        // page component가져와서 바뀌는 것
+        { path: "/", component: Home }, 
+        { path: "/about", component: About } 
+    ]
+})
+
+// 라우터 추가는 main.js에서 함
+//  bootstrap도 사용하겠다고 선언한 것도 main.js에서 했었음
+
+export default router;
+```
+
+main.js 수정
+
+`import router from './router'` 추가하고
+
+수정
+
+```jsx
+new Vue({
+// 라우터 여기서 정의
+router,  // -> app을 mount할때 router를 쓸 수 있는 구조로 만듬
+render: h => h(App),
+}).$mount('#app') // app은 index.html에서의 div의 아이디
+```
+
+→ 기본 페이지 Home 나오고 url 'http://localhost:8080/about'로 바꾸면 About페이지나옴
+
+router를 통해 component 호출하면 component 생성되고,다른 router통해 다른 component로 넘어 가면 이전 component는 종료 됨
+
+- 링크 이용해서 router이동
+
+App.vue 수정 (router-view위에)
+
+```html
+<router-link to="/"> Home </router-link>|
+<router-link to="/about"> About </router-link>
+```
+
+링크로 Home / About component 이동가능
+
+<br>
+
+# 정리
+
+처음에 index.html 렌더링 되고 그 후 로딩이 다시 되지 않고 모든건 `<div id=app></div>` 안 부분만 변동
+![Untitled](https://user-images.githubusercontent.com/78526031/119152640-74ef6a80-ba8b-11eb-84e4-5ad681f36076.png)
+
+index.html열리고 source(src)안에 main.js에서 vue 인스턴스 생성되면서 index의 div id=app 과 vue instance가 연결됨 → 연결되면서 render에서 App component 보여주게 됨 
+![Untitled (1)](https://user-images.githubusercontent.com/78526031/119153208-0068fb80-ba8c-11eb-9cf6-9458047161cb.png)
+→ App.vue 가서 보면 Home, About 뷰라우터가 이동시켜줌(링크 통해서 이동)
+router로 이동할 때는 a태그 말고 router-link 사용 to로 아까 설정한 path입력해주면 링크누르면 그 path로 이동한다는 설정 router-link 로 설정된 부분 누르면 <router-view>부분이 router에서 설정해 놓은 component로 바뀜
+![Untitled (2)](https://user-images.githubusercontent.com/78526031/119153304-1971ac80-ba8c-11eb-8e73-92cfd3a5322e.png)
+router.js 에서 Vue.use로 사용한다고 설정해주고 밑에는 router 설정해준것임 → router 동작할 수 있게 함
+![Untitled (3)](https://user-images.githubusercontent.com/78526031/119153479-3e661f80-ba8c-11eb-8c4a-2c64ca4be4c8.png)
