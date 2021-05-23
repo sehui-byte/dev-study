@@ -9,7 +9,8 @@
         - **데이터가 정확하게 전달되는 것을 보장하지 않음**
         - IPv4 프로토콜의 구조
 
-            ![IP_4](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\IP_4.png)
+            ![IP_4](https://user-images.githubusercontent.com/60249222/119250057-66629980-bbd8-11eb-8471-ce0def60e12f.png)
+
 
             IP Option은 붙을 수도, 붙지 않을 수도 있음, 최대 10개까지 결합 가능
 
@@ -54,13 +55,14 @@
         - IPv4 프로토콜 실습
             - ping 8.8.8.8
 
-                ![ICMP_3 1](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\ICMP_3 1.png)
+                ![ICMP_3 1](https://user-images.githubusercontent.com/60249222/119250072-87c38580-bbd8-11eb-95c2-a228a7ccfc7d.png)
+
 
                 ICMP 프로토콜 캡쳐시 IPv4도 같이 캡쳐되므로 동일한 패킷을 사용
 
             - IPv4 상세 패킷
 
-                ![IPv4_1](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\IPv4_1.png)
+                ![IPv4_1](https://user-images.githubusercontent.com/60249222/119250081-9742ce80-bbd8-11eb-81ad-f99ced48bf7d.png)
 
                 - Version : "0100"(4,  2진수 표기)
                 - IHL : "5"(20 byte를 4로 나눈 값, 2진수 표기)
@@ -69,7 +71,7 @@
                 - Identification : 패킷의 ID 값
                 - Flags : 현재 패킷의 조각화 여부를 명시
 
-                    ![IPv4_2](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\IPv4_2.png)
+                    ![IPv4_2](https://user-images.githubusercontent.com/60249222/119250085-9f027300-bbd8-11eb-953a-46423c32e2f9.png)
 
                     "4"는 조각화되어 있지 않음
 
@@ -101,11 +103,11 @@
         - 프로토콜 구조의 Type과 Code를 통해 오류 메시지를 전송
         - ICMP 프로토콜 구조
 
-            ![_001](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\_001.png)
+            ![_001](https://user-images.githubusercontent.com/60249222/119250089-a7f34480-bbd8-11eb-9f2e-396f78508386.png)
 
             - Type : 대분류, 메시지 타입
 
-                ![ICMP_2](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\ICMP_2.png)
+                ![ICMP_2](https://user-images.githubusercontent.com/60249222/119250094-b04b7f80-bbd8-11eb-88a2-400724a1383e.png)
 
                 - 꼭 알아야 하는 타입
                     - 0 : 응답
@@ -120,15 +122,15 @@
         - ICMP 프로토콜 실습
             - ping 8.8.8.8
 
-                ![ICMP_3 1](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\ICMP_3 1.png)
+                ![ICMP_3 1](https://user-images.githubusercontent.com/60249222/119250101-b9d4e780-bbd8-11eb-870c-3b879ce79ff9.png)
 
             - ICMP 상세 패킷
 
-                ![ICMP_4](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\ICMP_4.png)
+                ![ICMP_4](https://user-images.githubusercontent.com/60249222/119250103-c0fbf580-bbd8-11eb-9789-e06e06c1d42b.png)
 
                 뒤에 DATA가 48 Byte가 오는데 쓸모 없는 데이터
 
-                ![ICMP_5](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\ICMP_5.png)
+                ![ICMP_5](https://user-images.githubusercontent.com/60249222/119250109-c9ecc700-bbd8-11eb-983a-faecab82e52b.png)
 
                 수신 패킷, Type이 "0"으로 정상적으로 응답을 받음
 
@@ -142,7 +144,7 @@
                 - A의 라우팅 테이블을 확인
                     - cmd에 netstat -r 을 통해서 확인 가능
 
-                        ![ipv4_3](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\ipv4_3.png)
+                        ![ipv4_3](https://user-images.githubusercontent.com/60249222/119250116-d2450200-bbd8-11eb-9eb5-8bba5bac1d6b.png)
 
             2. A 호스트의 라우팅 테이블에 B의 정보가 없음을 확인
                 - 다른 네트워크 대역이기 때문
@@ -168,11 +170,11 @@
         - Well Known 포트(잘 알려진 포트)
             - 0 ~ 1024번
 
-            ![port_1](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\port_1.png)
+            ![port_1](https://user-images.githubusercontent.com/60249222/119250120-dc670080-bbd8-11eb-8bd1-915fae05cf86.png)
 
         - Registered 포트(예약된 포트)
 
-            ![port_2](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\port_2.png)
+            ![port_2](https://user-images.githubusercontent.com/60249222/119250125-e1c44b00-bbd8-11eb-9c1a-e83174887590.png)
 
         - Dynamic 포트(일반 사용자들이 사용)
             - 49152번 ~ 65535번 포트
@@ -182,7 +184,7 @@
             - 안정적, 순서대로, 에러 없이
         - TCP 프로토콜의 구조
 
-            ![TCP_1](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_1.png)
+            ![TCP_1](https://user-images.githubusercontent.com/60249222/119250128-e852c280-bbd8-11eb-8967-cd3ddd67842b.png)
 
             - 20 byte ~ 최대 60 byte
                 - TCP Options에 의해 달라짐
@@ -216,7 +218,7 @@
 
                 ⇒ 위 3개의 과정을 **3 Way Handshake**라고 한다.
 
-                ![TCP_2](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_2.png)
+                ![TCP_2](https://user-images.githubusercontent.com/60249222/119250136-f30d5780-bbd8-11eb-8def-d99ade64719b.png)
 
                 3 Way Handshake를 도식화
 
@@ -226,28 +228,28 @@
                 - 수신측 SEQ 번호 = 받는 ACK 번호가 됨
                 - 수신측 ACK 번호 = 받은 SEQ 번호 + 받은 데이터의 크기
 
-                ![TCP_3](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_3.png)
+                ![TCP_3](https://user-images.githubusercontent.com/60249222/119250142-f9033880-bbd8-11eb-87c3-e77a41be4b04.png)
 
         - TCP 연결 상태의 변화
             - TCP 상태전이도
 
-                ![TCP_4](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_4.png)
+                ![TCP_4](https://user-images.githubusercontent.com/60249222/119250147-ff91b000-bbd8-11eb-9d76-38cd3ce829bf.png)
 
                 여러가지 상태가 존재하나 가장 중요한 상태는 LISTEN/ESTABLISDHED
 
             - LISTEN : 연결을 위해 포트를 열어둔 상태
             - ESTABLISHED : 연결이 수립된 상태, 통신 가능 상태
 
-                ![TCP_5](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_5.png)
+                ![TCP_5](https://user-images.githubusercontent.com/60249222/119250152-07515480-bbd9-11eb-92c3-7d0c7cfbece8.png)
 
             TCP 연결 수립 과정의 진척도에 따라 상태 전이
 
         - TCP 프로토콜 실습
             - Chrome 중 패킷 캡쳐
 
-                ![TCP_6](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_6.png)
+                ![TCP_6](https://user-images.githubusercontent.com/60249222/119250154-0ddfcc00-bbd9-11eb-85b0-cd1308783317.png)
 
-                ![TCP_7](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_7.png)
+                ![TCP_7](https://user-images.githubusercontent.com/60249222/119250158-146e4380-bbd9-11eb-9e42-d7b1cb140fb7.png)
 
                 현재 TCP 패킷 송수신을 그래프로 시각화
 
@@ -255,7 +257,7 @@
                 - Flag가 [SYN], [SYN. ACK]. [ACK}
             - 이후에 상태가 ESTABLISDHED가 되면서 클라이언트쪽에서 다시 데이터 송수신을 진행
 
-            ![TCP_9](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\TCP_9.png)
+            ![TCP_9](https://user-images.githubusercontent.com/60249222/119250163-1932f780-bbd9-11eb-99f5-bb99b7284ee5.png)
 
             - Source Port : 4821
             - Destination Port : 80(web server)
@@ -280,7 +282,7 @@
                 - 파일 전송
         - UDP 프로토콜의 구조
 
-            ![UDP_1](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\UDP_1.png)
+            ![UDP_1](https://user-images.githubusercontent.com/60249222/119250166-20f29c00-bbd9-11eb-89c6-592c78f4cd23.png)
 
             - Source Port : 출발지 포트
             - Destination Port : 목적지 포트
@@ -289,7 +291,7 @@
         - UDP 프로토콜 실습
             - chrome 웹서핑 중 패킷 캡쳐
 
-                ![UDP_2](C:\Users\kjw\Desktop\dev\스터디\마크다운\2021_05_23\Export-2f9f0623-d75f-4087-bdce-0c1917d098f0\ICMP, IPv4, TCP, UDP 패킷 분석 de18bf1c7c4a4cf8a21ac9435ce72244\UDP_2.png)
+                ![UDP_2](https://user-images.githubusercontent.com/60249222/119250169-26e87d00-bbd9-11eb-8501-3e9225838c08.png)
 
                 - Source Port : 443
                     - 출발지 포트 : https
