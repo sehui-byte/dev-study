@@ -1,7 +1,3 @@
----
-title: HTTP 프로토콜
----
-
 - NAT
     - Network Address Translation : IP 패킷의 TCP/UDP 포트 숫자와 소스 및 목적지의 IP 주소 등을 재기록하면서 라우터를 통해 네트워크 트래픽을 주고 받는 기술
         - 엄밀히 말하면 NAT 와 PAT로 구분
@@ -24,7 +20,8 @@ title: HTTP 프로토콜
                 - 목적지 IP 주소 : 200.100.10.1
                 - NAT 테이블에 아래 기록 추가
 
-                    ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/NAT_!.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/NAT_!.png)
+                    ![NAT_!](https://user-images.githubusercontent.com/60249222/120068054-ab476e00-c0b9-11eb-9fcc-1758558153aa.png)
+
 
         3. 웹 서버에서 수신한 데이터 처리 후, 응답 패킷에 출발지, 목적지 IP 기재
             - 웹 서버(200.100.10.1)에서 출발
@@ -68,21 +65,22 @@ title: HTTP 프로토콜
                 - 통신시에 연결 수립과 해제가 1회만 이루어짐
         - HTTP 요청 프로토콜
 
-            ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__1.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__1.png)
+            ![HTTP_요청_1](https://user-images.githubusercontent.com/60249222/120068131-1b55f400-c0ba-11eb-8b1a-08f5e5cc2a42.png)
+
 
             HTTP 요청 프로토콜 도식화
 
-            ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__2.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__2.png)
+            ![HTTP_요청_2](https://user-images.githubusercontent.com/60249222/120068141-2a3ca680-c0ba-11eb-8c7f-da1ad780ef85.png)
 
             가장 간단한 GET 방식의 HTTP 요청 프로토콜 첫번째부터 Request line, Headers, 공백, Body. 현재 Body 부분은 비어있다.
 
             - Request Line
 
-                ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__3.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__3.png)
+                ![HTTP_요청_3](https://user-images.githubusercontent.com/60249222/120068148-3163b480-c0ba-11eb-8ea8-400030af92dd.png)
 
                 - 요청타입
 
-                    ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__4.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__4.png)
+                    ![HTTP_요청_4](https://user-images.githubusercontent.com/60249222/120068155-39235900-c0ba-11eb-92ff-28bf8765dca8.png)
 
                     - 사실상 GET, POST만 사용
                         - GET, POST 둘 다 요청, 데이터 전송 가능
@@ -106,7 +104,7 @@ title: HTTP 프로토콜
             - HTTP 요청 프로토콜 실습
                 - telnet으로 진행
 
-                    ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__6.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__6.png)
+                    ![HTTP_요청_6](https://user-images.githubusercontent.com/60249222/120068173-4c362900-c0ba-11eb-8ab2-1f2cc9a16448.png)
 
                     1. telnet으로 www.google.com 80 으로 연결
                     2. HTTP 요청 프로토콜 작성
@@ -115,19 +113,19 @@ title: HTTP 프로토콜
         - HTTP 응답 프로토콜
             - HTTP 응답 프로토콜 구조
 
-                ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__1%201.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__1%201.png)
+                ![HTTP_응답_1](https://user-images.githubusercontent.com/60249222/120068176-52c4a080-c0ba-11eb-95a1-d72dd14d694f.png)
 
-                ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__2%201.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__2%201.png)
+                ![HTTP_응답_2](https://user-images.githubusercontent.com/60249222/120068182-59531800-c0ba-11eb-8b6d-8c2986e7545f.png)
 
                 실제 응답 프로토콜 구조. HTTP/1.1 200 OK 가 Statuc Line에 해당
 
                 - Status Line
 
-                    ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__3%201.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__3%201.png)
+                    ![HTTP_응답_3](https://user-images.githubusercontent.com/60249222/120068196-63751680-c0ba-11eb-8b76-e1c742b80f3e.png)
 
                     - 상태코드
 
-                        ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__4%201.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__4%201.png)
+                        ![HTTP_응답_4](https://user-images.githubusercontent.com/60249222/120068208-6a9c2480-c0ba-11eb-9ed8-ce1a380ec9c6.png)
 
                         - 200 ~ : 성공
                         - 400 ~ : 에러, 클라이언트 문제
@@ -140,14 +138,23 @@ title: HTTP 프로토콜
             - HTTP 헤더는 공통으로 사용하는 일반 헤더, 요청 프로토콜에서 사용하는 요청 헤더, 응답 프로토콜에서 사용하는 응답 헤더로 분류
             - 일반 헤더
 
-                ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__1%202.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__1%202.png)
+                ![HTTP_헤더포맷_1](https://user-images.githubusercontent.com/60249222/120068223-7556b980-c0ba-11eb-89d3-3bd1226e1353.png)
 
             - 요청 헤더
 
-                ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__2%202.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__2%202.png)
+                ![HTTP_헤더포맷_2](https://user-images.githubusercontent.com/60249222/120068235-7b4c9a80-c0ba-11eb-8e7c-9b2a5fd57520.png)
 
                 - User-Agent : Client의 프로그램 정보를 Server에게 전달
                     - 접속 플랫폼이 PC인지, Mobile인지 확인 가능
             - 응답 헤더
 
-                ![HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__3%202.png](HTTP%20%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%90%E1%85%A9%E1%84%8F%E1%85%A9%E1%86%AF%20fc18a77217924baa9d6b75483f8f6ed0/HTTP__3%202.png)
+                ![HTTP_헤더포맷_3](https://user-images.githubusercontent.com/60249222/120068241-830c3f00-c0ba-11eb-837b-52636f90c0ab.png)
+                
+                
+<hr/>
+
+_참고문헌_
+
+따라하면서 배우는 IT 네트워크 기초(개정판) : <https://www.youtube.com/channel/UCl9zTDOvOxdCfUt1HqVwwdg>
+
+STEVEN J. LEE님의 블로그 : <https://www.stevenjlee.net/2020/07/11/%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-nat-network-address-translation-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%A3%BC%EC%86%8C-%EB%B3%80%ED%99%98/>

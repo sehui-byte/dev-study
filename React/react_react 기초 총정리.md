@@ -375,7 +375,49 @@ ReactDOM.render(
 
 
 
+### 파일 업로드
 
+
+
+```react
+//함수 컴포넌트는 인스턴스가 없기 때문에 함수 컴포넌트에 ref를 사용할 수 없다
+class FileInput extends React.Component{
+  constructor(props){
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    
+    //file API를 사용하여 파일과 상호작용 해야함
+    //submit핸들러에서 파일에 접근하기 위해 DOM노드의 ref를 만든다
+    //보통 컴포넌트의 인스턴스가 생성될때 Ref를 프로퍼티로 추가하고, 컴포넌트의 인스턴스 어느 곳에서도 Ref에 접근 가능하다
+    this.fileInput = React.createRef();
+  }
+  
+  handleSubmit(event){
+    event.preventDefault();
+    //render메서드 안에서 ref가 엘리먼트에게 값이 전달되었을 때, 그 노드를 향한 참조는 ref의 current attribute에 담기게 된다
+    alert(`Selected file = ${this.fileInput.current.files[0].name}`);
+  }
+  
+  render(){
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Upload file:
+            <input type="file" ref={this.fileInput} />
+        </label>
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    );  
+  }
+}
+
+ReactDOM.render(
+  <FileInput />,
+  document.getElementById('root')
+);
+
+```
 
 
 
