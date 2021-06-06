@@ -1,11 +1,3 @@
----
-title: 01. 운영체제
-category:
-  - OS
-tag:
-  - OS
----
-
 ### 운영체제란?
 
 - Operation System으로 컴퓨터 하드웨어를 잘 관리하여 성능을 높이고(Performance), 사용자에게 편의성을 제공(Convenience)하며, 컴퓨터 하드웨어를 관리하는 프로그램(Control program for computer)
