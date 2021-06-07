@@ -34,6 +34,33 @@ ReactDOM.render(
 
 
 
+### React onChange
+
+- [codepen에서 보기](https://codepen.io/sehui-byte/pen/PopQGRx?editors=0011)
+
+```javascript
+
+class Test extends React.Component {
+  
+  onChange(e) {
+     console.log(e.target.value);
+  }
+  
+  render() {
+    return (
+       <input type="text" name="name" onChange={this.onChange} />
+    );
+  }
+}
+
+ReactDOM.render(
+  <Test />,
+  document.getElementById('root')
+);
+```
+
+
+
 ---
 
 
