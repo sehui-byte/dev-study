@@ -19,10 +19,14 @@
 -- DBMS 간의 문법적 상이함을 고려해 만들어진 조인입니다.
 -- 3번째 행의 JOIN 종류라고 말을 하는 것은 INNER JOIN 기본을 토대로 외부조인 종류인 (LEFT JOIN, RIGHT JOIN, OUTER JOIN 등이 해당합니다.)
 
-
 -- 1)INNER JOIN
+
+```sql
 SELECT * FROM KOSMOMEMBER; -- KNAME 을 조인조건으로. A
 SELECT * FROM KOSMEMLIST; -- B
+```
+
+
 
 -- ON 조건을 기반으로 모든 컬럼을 조회하는 것 : SELECT * FROM 일 경우
 -- 한쪽 테이블의 컬럼만 조회하는 경우 : A.* 같이 스캔범위를 지정할 경우
