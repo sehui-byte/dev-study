@@ -19,7 +19,7 @@ const d2 = d1.clone();
 console.log(d2.subtract(1,'days').format('YYYY-MM-DD'));
 ```
 
-
+![image-20210608223520986](C:\Users\김세희\AppData\Roaming\Typora\typora-user-images\image-20210608223520986.png)
 
 ----
 
