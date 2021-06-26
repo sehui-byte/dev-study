@@ -29,3 +29,18 @@
 2. functional component인 경우
 
 만약 `functional component`일 경우 parameter로 넘길 수 있다.
+
+
+
+
+
+3. Render functions
+
+
+
+----
+
+### 참고자료
+
+- https://frontarm.com/james-k-nelson/passing-data-props-children/
+- https://stackoverflow.com/questions/32370994/how-to-pass-props-to-this-props-children
