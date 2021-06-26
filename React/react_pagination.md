@@ -239,7 +239,3 @@ class DataListContainer extends React.Component<Props, State> {
 #### material-ui pagination api
 
 - https://material-ui.com/api/pagination/
-
-![image-20210603122437767](C:\Users\nextree\AppData\Roaming\Typora\typora-user-images\image-20210603122437767.png)
-
-![image-20210603122517047](C:\Users\nextree\AppData\Roaming\Typora\typora-user-images\image-20210603122517047.png)

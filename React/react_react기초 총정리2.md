@@ -26,7 +26,7 @@ ReactDOM.render(
 );
 ```
 
-![image-20210523222931077](C:\Users\김세희\AppData\Roaming\Typora\typora-user-images\image-20210523222931077.png)
+![image-20210523222931077](https://raw.githubusercontent.com/sehui-byte/save-image-repo/image/img/image-20210523222931077.png)
 
 코드 실행결과는 위와 같다. 
 
