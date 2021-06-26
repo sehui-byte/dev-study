@@ -19,9 +19,27 @@
 
   
 
-  
+--------
 
 
+
+### Database
+
+- 
+
+
+
+### Operating System
+
+- **운영체제 KOCW 양희재 교수님 강의(youtube)**
+  - [1. 운영체제 개요](https://github.com/sehui-byte/dev-study/blob/main/Operating%20System/Operation%20System_01.%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C_%EA%B0%9C%EC%9A%94.md)
+  - 
+
+
+
+### React
+
+- [React 기초 총정리_1](https://github.com/sehui-byte/dev-study/blob/main/React/react_react%20%EA%B8%B0%EC%B4%88%20%EC%B4%9D%EC%A0%95%EB%A6%AC.md)
 
 
 
