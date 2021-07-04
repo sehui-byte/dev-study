@@ -112,9 +112,33 @@
 
         다음 예제는 이름과 값으로 이루어진 네 쌍의 프로퍼티를 가지는 "Developer" 객체를 나타내는 예시입니다.
 
-      - ![](C:\Users\quddb\Desktop\json1.PNG)
+      - {
+            "language": [
+                {
+                    "name": "HTML",
+                    "category": "web",
+                    "developer": "W3C"
+                },
+                {
+                    "name": "CSS",
+                    "category": "web",
+                    "developer": "W3C"
+                },
+                {
+                    "name": "Java",
+                    "category": "application",
+                    "developer": "Oracle"
+                },
+                {
+                    "name": "Python",
+                    "category": "application",
+                    "developer": "Python"
+                }
+            ]
+        }
 
       - 다만, json의 데이터가 항상 "key": "value" 형태로만 들어가는 것이 아닌, json 묶음 배열의 형태로도 위와 같이 들어가 있을 수 있습니다.
+      - 아래의 json 구조 내용에서 위의 json에 포함된 각 데이터의 형태를 하나씩 살펴볼 것입니다.
 
         
 
@@ -179,7 +203,15 @@
 
       - JSON 객체는 중괄호({})로 둘러쌓아 표현합니다. 또한, JSON 객체는 쉼표(,)를 사용하여 여러 프로퍼티를 포함할 수 있습니다.
 
-      - ![](C:\Users\quddb\Desktop\json2.PNG)
+      - {
+            "name": "식빵",
+            "family": "웰시코기",
+            "age": 1,
+            "weight": 2.14,
+            "StatusYN": False,
+            "userId": "",
+            "Regist_dt":"2021-07-03"
+        }
 
       - 위의 JSON 객체 형태는 상기 언급했던 1~6번에 대한 데이터들이 전부 있습니다.
 
@@ -191,7 +223,11 @@
 
       - 다음 예제는 배열의 이름이 "dog"이고, 3개의 JSON 객체를 요소로 가지는 JSON 배열의 예제입니다.
 
-      - ![](C:\Users\quddb\Desktop\json3.PNG)
+      - "dog": [
+            {"name": "식빵", "family": "웰시코기", "age": 1, "weight": 2.14},
+            {"name": "콩콩", "family": "포메라니안", "age": 3, "weight": 2.5},
+            {"name": "젤리", "family": "푸들", "age": 7, "weight": 3.1}
+        ]
 
         - 위의 데이터는 json 형태가 배열로써 묶여있는 것입니다.
 
