@@ -89,13 +89,15 @@
             return print("0은 안되요")
         else:
             data = self.sheets_map[sheet_name].col_values(index) # 해당 문자열의 인덱스값 찾아서 list 반환
-        if option == 'list': # list 반환을 원할 경우 list 반환
-            return data
-        if option == 'index': #찾고자 하는 값의 index값을 원할 경우 index 반환
-            try:
-                return (data.index(find_taget)+1)
-            except:
-                return -1 # 찾고자 하는 값이 없을 경우 -1 반환
+            
+        try:
+            if option == 'list': # list 반환을 원할 경우 list 반환
+                return data
+            if option == 'index': #찾고자 하는 값의 index값을 원할 경우 index 반환
+                return (data.index(find_taget) + 1)
+        except:
+            return -1 # 찾고자 하는 값이 없을 경우 -1 반환
+            
     # row 가져오기
     def get_find_row(self, sheet_name, find_taget, option='list'):
         if type(find_taget) != int or type(find_taget) != str:
@@ -108,13 +110,13 @@
             return print("0은 안되요")
         else:
             data = self.sheets_map[sheet_name].row_values(index)
-        if option == 'list':
-            return data
-        if option == 'index':
-            try:
+        try:
+            if option == 'list':
+                return data
+            if option == 'index':
                 return (data.index(find_taget) + 1)
-            except:
-                return -1
+        except:
+            return -1
     #어떠한 케이스도 아닐 경우 실행 시킬 함수 셋팅
     def get_find_default(self, sheet_name, find_taget, option='list'):
         return self.sheets_map[sheet_name].get_all_records()
@@ -227,7 +229,10 @@ class save:
         
     #데이터프레임으로 저장하는 동적 함수
     def save_df(self, data, taget, col, row, size): #row에 키 data= data
-        if taget.empty : # 데이터프레임이 지정되지 않았으면...
+        if find().find_type(taget) != "DataFrame" : # 데이터프레임이 지정되지 않았으면...
+                                                    # 해당 값은 디폴트가 None인데 데이터프레임은 None를 사용할 시 에러가 나기 때문에 (None가 없기에..)
+                                                    # None인지 DataFram인지 둘 다를 비교하기 위해서는 type으로 비교해야 한다.
+                                                    # 에러 방지를 위해 문자열로 반환받은 타입으로 비교한다.
             taget = pd.DataFrame(columns=None) # 데이터 프레임을 생성
         if row != None: # 행을 기준으로 데이터프레임에 값 추가
             for i in range(0, size, 1):
@@ -287,6 +292,8 @@ class find: #미완성
             # 클래스 변수 타입인 DataFrame, dict, list, sheet 등이 있다.
             # 클래스로 정의되지 않는 타입인 xml, json은 문자열로 찾을 수 있다.(클래스로 못찾나?)
             # 모든 타입은 문자열로 변환하여 리턴한다.
+    """
+    미완성함수
     def find_type_cast(self, taget):
         type_str = self.find_type(taget) # 해당 데이터가 어떤 타입인지 찾아주는 함수 실행
         if type_str == 'type' :
@@ -296,6 +303,7 @@ class find: #미완성
         self.find_type_name = 'find_'+ type_str
         self.method = getattr(self, self.find_type_name, lambda : "default")
         return self.method(type_str, taget)
+    """
 
     def find_type(self, taget): # 타입 셋팅 함수
         pattern =r"sheet|list|DataFrame|dict|xml|json|int|float|NoneType|tuple|dict|bool|type" #정규식 패턴 생성
@@ -317,19 +325,7 @@ class find: #미완성
             except:
                 sharch_taget = "default" #어떠한 값도 아닐 경우 default 리턴
         return sharch_taget
-    """
-    #type 동적 캐스트 함수를 만들려다가 실패한 흔적.... 엄청 다양한 시도를 했지만 실패했다.
-    def substitution_type(self, taget, want_type):
-        print('taget : ',taget)
-        taget_type = self.find_type(want_type)
-        print(">>> : ",type(taget_type))
-        print(">>> : ", taget_type)
-        str_taget = str(taget)
-        print(want_type(str_taget))
-        exec('a='+taget_type+'('+str_taget+')')
-        print('결과 : ',a)
-        return a
-    """
+
     def find_sheet(self, type_str, taget):
         return ""
     def find_DataFrame(self, type_str, taget):
