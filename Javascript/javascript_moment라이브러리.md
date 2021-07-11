@@ -29,7 +29,4 @@ console.log(d2.subtract(1,'days').format('YYYY-MM-DD'));
 - https://jsdev.kr/t/moment-js/1826
 
 - https://momentjs.com/guides/#/lib-concepts/mutability/
-<<<<<<< HEAD
 
-=======
->>>>>>> ba150a36c11ea7b64ecd34fa057789dda67267a1
